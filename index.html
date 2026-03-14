@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Wrap Studio | Custom Gift Wrapping & Handmade Crafts</title>
-  <meta name="description" content="Custom gift wrapping services and handmade crafts. Transform your gifts into unforgettable experiences with beautifully wrapped packages.">
+  <title>Mad Mexican Crafter | Custom Gift Wrapping & Handmade Crafts</title>
+  <meta name="description" content="Mad Mexican Crafter - custom gift wrapping services and handmade crafts. Transform your gifts into unforgettable experiences with beautifully wrapped packages.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -54,9 +54,11 @@
       height: 72px;
     }
     .nav-logo {
+      display: flex; align-items: center; gap: 10px;
       font-family: var(--font-display); font-size: 1.4rem; font-weight: 700;
       color: var(--color-primary); letter-spacing: 0.02em;
     }
+    .nav-logo img { height: 48px; width: auto; border-radius: 6px; }
     .nav-logo span { color: var(--color-accent); }
     .nav-links { display: flex; gap: 32px; list-style: none; }
     .nav-links a {
@@ -92,20 +94,34 @@
       background: radial-gradient(circle, rgba(44,62,80,0.08) 0%, transparent 70%);
       border-radius: 50%;
     }
-    .hero-content { position: relative; z-index: 1; max-width: 650px; padding: 120px 0 80px; }
+    .hero .container {
+      width: 100%; padding-top: 100px; padding-bottom: 60px;
+    }
+    .hero-brand-row {
+      display: flex; align-items: center; gap: 40px;
+      width: 70%; margin-bottom: 32px;
+    }
+    .hero-logo { flex-shrink: 0; }
+    .hero-logo img {
+      width: 200px; height: auto; border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    }
+    .hero-brand { flex: 1; }
+    .hero-brand h1 {
+      font-family: var(--font-display); font-weight: 700;
+      line-height: 1.05; color: var(--color-primary);
+      font-size: clamp(3rem, 5.5vw, 5.5rem);
+    }
+    .hero-brand h1 em { font-style: italic; color: var(--color-accent); display: block; }
+    .hero-content { position: relative; z-index: 1; }
     .hero-tag {
-      display: inline-block; font-size: 0.8rem; font-weight: 600;
+      display: inline-block; font-size: 0.85rem; font-weight: 600;
       letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent);
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
-    .hero h1 {
-      font-family: var(--font-display); font-size: 3.8rem; font-weight: 700;
-      line-height: 1.15; color: var(--color-primary); margin-bottom: 24px;
-    }
-    .hero h1 em { font-style: italic; color: var(--color-accent); }
     .hero p {
       font-size: 1.15rem; color: var(--color-text-light);
-      line-height: 1.8; margin-bottom: 40px; max-width: 500px;
+      line-height: 1.8; margin-bottom: 40px; max-width: 550px;
     }
     .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
 
@@ -350,8 +366,13 @@
         padding: 24px; gap: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       }
       .nav-toggle { display: block; }
-      .hero h1 { font-size: 2.5rem; }
-      .hero-content { padding: 100px 0 60px; }
+      .hero-brand-row { width: 100%; flex-direction: column; text-align: center; gap: 20px; }
+      .hero-logo img { width: 150px; }
+      .hero-brand h1 { font-size: 2.5rem; }
+      .hero .container { padding-top: 90px; }
+      .hero-content { text-align: center; }
+      .hero p { margin-left: auto; margin-right: auto; }
+      .hero-buttons { justify-content: center; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .services-grid { grid-template-columns: 1fr; }
       .portfolio-grid { grid-template-columns: 1fr; }
@@ -368,7 +389,7 @@
 <!-- Navigation -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">The Wrap <span>Studio</span></a>
+    <a href="#" class="nav-logo"><img src="logo.png" alt="Logo">Mad Mexican <span>Crafter</span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
@@ -385,9 +406,16 @@
 <!-- Hero -->
 <section class="hero">
   <div class="container">
+    <div class="hero-brand-row">
+      <div class="hero-logo">
+        <img src="logo.png" alt="Mad Mexican Crafter logo - illustrated woman with crafting supplies">
+      </div>
+      <div class="hero-brand">
+        <h1>Mad<br><em>Mexican Crafter</em></h1>
+      </div>
+    </div>
     <div class="hero-content">
-      <span class="hero-tag">Custom Gift Wrapping & Handmade Crafts</span>
-      <h1>Make Every Gift <em>Unforgettable</em></h1>
+      <span class="hero-tag">Hand Made with Love</span>
       <p>Beautifully handcrafted wrapping and artisan touches that transform your gifts into extraordinary experiences worth remembering.</p>
       <div class="hero-buttons">
         <a href="#request" class="btn btn-primary">Request a Quote</a>
@@ -407,7 +435,7 @@
       <div class="about-content">
         <span class="section-tag">Our Story</span>
         <h3>Where Passion Meets Paper</h3>
-        <p>What started as a love for making gifts look as beautiful on the outside as the thought inside has blossomed into The Wrap Studio. Every ribbon tied, every bow crafted, and every tag designed is an extension of the care you put into choosing the perfect gift.</p>
+        <p>What started as a love for making gifts look as beautiful on the outside as the thought inside has blossomed into Mad Mexican Crafter. Every ribbon tied, every bow crafted, and every tag designed is an extension of the care you put into choosing the perfect gift.</p>
         <p>We believe that presentation is more than packaging. It's the first impression, the anticipation, and the delight before the gift is even opened. That's why we pour artisan attention into every single wrap.</p>
         <div class="about-stats">
           <div class="about-stat">
@@ -586,7 +614,7 @@
         </div>
       </div>
       <div class="request-form" id="requestFormContainer">
-        <form id="requestForm">
+        <form id="requestForm" action="https://formspree.io/f/PLACEHOLDER" method="POST">
           <div class="form-row">
             <div class="form-group">
               <label for="name">Your Name</label>
@@ -667,7 +695,7 @@
     <p>Follow us on Instagram for wrapping inspiration, behind-the-scenes peeks, and more.</p>
     <a href="https://instagram.com" target="_blank" class="btn" aria-label="Follow on Instagram">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-      Follow @thewrapstudio
+      Follow @madmexicancrafter
     </a>
   </div>
 </section>
@@ -676,7 +704,7 @@
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <div class="footer-logo">The Wrap <span>Studio</span></div>
+      <div class="footer-logo">Mad Mexican <span>Crafter</span></div>
       <ul class="footer-links">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
@@ -684,7 +712,7 @@
         <li><a href="#request">Request</a></li>
       </ul>
     </div>
-    <div class="footer-copy">&copy; 2026 The Wrap Studio. All rights reserved.</div>
+    <div class="footer-copy">&copy; 2026 Mad Mexican Crafter. All rights reserved.</div>
   </div>
 </footer>
 
@@ -707,15 +735,31 @@
     link.addEventListener('click', () => navLinks.classList.remove('open'));
   });
 
-  // Form submission (demo - shows success message)
+  // Form submission via Formspree
   const form = document.getElementById('requestForm');
   const formSuccess = document.getElementById('formSuccess');
-  form.addEventListener('submit', (e) => {
+  const formSubmitBtn = form.querySelector('.form-submit');
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    // In production, this would send data to a backend or email service
-    // For now, show the success message
-    form.style.display = 'none';
-    formSuccess.style.display = 'block';
+    formSubmitBtn.textContent = 'Sending...';
+    formSubmitBtn.disabled = true;
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        form.style.display = 'none';
+        formSuccess.style.display = 'block';
+      } else {
+        formSubmitBtn.textContent = 'Error - Try Again';
+        formSubmitBtn.disabled = false;
+      }
+    } catch (err) {
+      formSubmitBtn.textContent = 'Error - Try Again';
+      formSubmitBtn.disabled = false;
+    }
   });
 </script>
 
