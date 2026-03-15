@@ -389,7 +389,7 @@
 <!-- Navigation -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#" class="nav-logo"><img src="logo.png" alt="Logo">Mad Mexican <span>Crafter</span></a>
+    <a href="#" class="nav-logo"><img src="large-logo.jpg" alt="Logo">Mad Mexican <span>Crafter</span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
@@ -408,7 +408,7 @@
   <div class="container">
     <div class="hero-brand-row">
       <div class="hero-logo">
-        <img src="logo.png" alt="Mad Mexican Crafter logo - illustrated woman with crafting supplies">
+        <img src="large-logo.jpg" alt="Mad Mexican Crafter logo - illustrated woman with crafting supplies">
       </div>
       <div class="hero-brand">
         <h1>Mad<br><em>Mexican Crafter</em></h1>
@@ -614,7 +614,7 @@
         </div>
       </div>
       <div class="request-form" id="requestFormContainer">
-        <form id="requestForm" action="https://formspree.io/f/PLACEHOLDER" method="POST">
+        <form id="requestForm" name="quote-request" method="POST" data-netlify="true">
           <div class="form-row">
             <div class="form-group">
               <label for="name">Your Name</label>
@@ -735,7 +735,7 @@
     link.addEventListener('click', () => navLinks.classList.remove('open'));
   });
 
-  // Form submission via Formspree
+  // Form submission via Netlify Forms
   const form = document.getElementById('requestForm');
   const formSuccess = document.getElementById('formSuccess');
   const formSubmitBtn = form.querySelector('.form-submit');
@@ -744,10 +744,10 @@
     formSubmitBtn.textContent = 'Sending...';
     formSubmitBtn.disabled = true;
     try {
-      const response = await fetch(form.action, {
+      const response = await fetch('/', {
         method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
       });
       if (response.ok) {
         form.style.display = 'none';
